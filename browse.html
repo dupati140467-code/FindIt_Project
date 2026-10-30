@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Browse Items — FindIt</title><link rel="stylesheet" href="css/style.css"></head>
+<body data-page="browse"><div id="app-header"></div><main class="container page-main">
+  <section class="page-intro"><span class="eyebrow">ITEM DIRECTORY</span><h1>Browse items</h1><p>Search reports, narrow the results and open a listing for more details.</p></section>
+  <section class="filter-panel">
+    <div class="filter-search"><label for="search-input">Search reports</label><input id="search-input" placeholder="Item name, description or location…"></div>
+    <div><label for="type-filter">Report type</label><select id="type-filter"><option value="All">All types</option><option>Lost</option><option>Found</option></select></div>
+    <div><label for="category-filter">Category</label><select id="category-filter"><option value="All">All categories</option></select></div>
+    <div><label for="status-filter">Status</label><select id="status-filter"><option value="All">All statuses</option><option value="Open">Open</option><option value="Available">Available</option><option value="Returned">Returned</option></select></div>
+    <div><label for="sort-filter">Sort by</label><select id="sort-filter"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="name">Item name</option></select></div>
+  </section>
+  <div class="results-toolbar"><span id="results-count">Loading reports…</span><div class="view-toggle"><button class="view-btn active" id="grid-view" type="button">▦ Grid</button><button class="view-btn" id="list-view" type="button">☷ List</button></div></div>
+  <div id="browse-results" class="product-grid"></div>
+  <div id="browse-empty" class="empty-state hidden"><div class="empty-icon">⌕</div><h3>No reports found</h3><p>Try another search or clear a filter.</p><button class="btn btn-secondary" id="clear-filters" type="button">Clear filters</button></div>
+</main>
+<div id="detail-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title"><div class="modal-card detail-modal-card"><button class="modal-close" id="close-detail" aria-label="Close details">×</button><div id="detail-content"></div></div></div>
+<div id="claim-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="claim-title"><div class="modal-card"><button class="modal-close" id="close-claim" aria-label="Close claim form">×</button><span class="eyebrow">CLAIM AN ITEM</span><h2 id="claim-title">Tell us why it may be yours</h2><form id="claim-form"><input type="hidden" id="claim-report-id"><label for="claimant-name">Demo display name</label><input id="claimant-name" maxlength="60" required placeholder="e.g. Alex"><label for="claim-explanation">Why do you believe this item is yours?</label><textarea id="claim-explanation" minlength="10" maxlength="500" required placeholder="Describe a detail that can help distinguish your item…" rows="4"></textarea><label for="claim-private">Optional private identifying detail (demo only)</label><input id="claim-private" maxlength="160" placeholder="Do not include sensitive information"><p class="form-note">This prototype is not secure. Do not enter sensitive personal information.</p><button class="btn btn-primary btn-full" type="submit">Submit demo claim</button></form></div></div>
+<div id="app-footer"></div><div id="toast-region" class="toast-region" aria-live="polite"></div><script src="js/storage.js"></script><script src="js/app.js"></script><script src="js/browse.js"></script></body></html>
